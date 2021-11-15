@@ -15,16 +15,9 @@ namespace IAPP
     
     public partial class BaseDomNSLEEntities : DbContext
     {
-        private static BaseDomNSLEEntities _context;
         public BaseDomNSLEEntities()
             : base("name=BaseDomNSLEEntities")
         {
-        }
-        public static BaseDomNSLEEntities GetContext()
-        {
-            if (_context == null)
-                _context = new BaseDomNSLEEntities();
-            return _context;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -33,7 +26,6 @@ namespace IAPP
         }
     
         public virtual DbSet<Apartaments> Apartaments { get; set; }
-        public virtual DbSet<Apartment> Apartment { get; set; }
         public virtual DbSet<House> House { get; set; }
         public virtual DbSet<ResidentialComplex> ResidentialComplex { get; set; }
         public virtual DbSet<Coefficients> Coefficients { get; set; }

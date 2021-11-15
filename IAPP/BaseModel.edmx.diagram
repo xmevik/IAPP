@@ -6,12 +6,10 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f9b11c346478430ab11cbabb363e692e" Name="Diagram1">
         <EntityTypeShape EntityType="BaseDomNSLEModel.Apartaments" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseDomNSLEModel.Apartment" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseDomNSLEModel.House" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseDomNSLEModel.ResidentialComplex" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseDomNSLEModel.Coefficients" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="BaseDomNSLEModel.FK_Apartaments_House" ManuallyRouted="false" />
-        <AssociationConnector Association="BaseDomNSLEModel.FK_Apartment_House" ManuallyRouted="false" />
         <AssociationConnector Association="BaseDomNSLEModel.FK_House_ResidentialComplex" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
