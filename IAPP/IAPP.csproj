@@ -83,6 +83,7 @@
     <Compile Include="Coefficients.xaml.cs">
       <DependentUpon>Coefficients.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Manager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
