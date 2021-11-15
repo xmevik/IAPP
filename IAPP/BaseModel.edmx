@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище BaseDomNSLEModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Apartaments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HouseID" Type="int" Nullable="false" />
+          <Property Name="Number" Type="int" Nullable="false" />
+          <Property Name="Area" Type="float" Nullable="false" />
+          <Property Name="CountOfRooms" Type="int" Nullable="false" />
+          <Property Name="Section" Type="int" Nullable="false" />
+          <Property Name="Floor" Type="int" Nullable="false" />
+          <Property Name="IsSold" Type="bit" Nullable="false" />
+          <Property Name="BuildingCost" Type="int" Nullable="false" />
+          <Property Name="ApartmentValueAdded" Type="int" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Apartment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="HouseID" Type="int" />
+          <Property Name="Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Area" Type="real" />
+          <Property Name="CountOfRooms" Type="int" />
+          <Property Name="Section" Type="int" />
+          <Property Name="Floor" Type="int" />
+          <Property Name="IsSold" Type="bit" />
+          <Property Name="BuildingCost" Type="bigint" />
+          <Property Name="ApartmentValueAdded" Type="int" />
+          <Property Name="IsDeleted" Type="bit" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "BaseDomNSLE.dbo.Coefficients" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Coefficients">
+          <Key>
+            <PropertyRef Name="area" />
+            <PropertyRef Name="areac" />
+            <PropertyRef Name="rooms" />
+            <PropertyRef Name="roomsc" />
+            <PropertyRef Name="apartmentc" />
+            <PropertyRef Name="housec" />
+            <PropertyRef Name="complexc" />
+            <PropertyRef Name="basec" />
+          </Key>
+          <Property Name="area" Type="float" Nullable="false" />
+          <Property Name="areac" Type="float" Nullable="false" />
+          <Property Name="rooms" Type="int" Nullable="false" />
+          <Property Name="roomsc" Type="float" Nullable="false" />
+          <Property Name="apartmentc" Type="float" Nullable="false" />
+          <Property Name="housec" Type="float" Nullable="false" />
+          <Property Name="complexc" Type="float" Nullable="false" />
+          <Property Name="basec" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="House">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResidentialComplexID" Type="int" Nullable="false" />
+          <Property Name="Street" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Number" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="BuildingCost" Type="money" Nullable="false" />
+          <Property Name="HouseValueAdded" Type="money" Nullable="false" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResidentialComplex">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="BuildingCost" Type="money" Nullable="false" />
+          <Property Name="ComplexValueAdded" Type="money" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Apartaments_House">
+          <End Role="House" Type="Self.House" Multiplicity="1" />
+          <End Role="Apartaments" Type="Self.Apartaments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Apartaments">
+              <PropertyRef Name="HouseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Apartment_House">
+          <End Role="House" Type="Self.House" Multiplicity="0..1" />
+          <End Role="Apartment" Type="Self.Apartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Apartment">
+              <PropertyRef Name="HouseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_House_ResidentialComplex">
+          <End Role="ResidentialComplex" Type="Self.ResidentialComplex" Multiplicity="1" />
+          <End Role="House" Type="Self.House" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResidentialComplex">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="House">
+              <PropertyRef Name="ResidentialComplexID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище BaseDomNSLEModelContainer">
+          <EntitySet Name="Apartaments" EntityType="Self.Apartaments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Apartment" EntityType="Self.Apartment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="House" EntityType="Self.House" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResidentialComplex" EntityType="Self.ResidentialComplex" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Coefficients" EntityType="Self.Coefficients" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Coefficients].[area] AS [area], 
+    [Coefficients].[areac] AS [areac], 
+    [Coefficients].[rooms] AS [rooms], 
+    [Coefficients].[roomsc] AS [roomsc], 
+    [Coefficients].[apartmentc] AS [apartmentc], 
+    [Coefficients].[housec] AS [housec], 
+    [Coefficients].[complexc] AS [complexc], 
+    [Coefficients].[basec] AS [basec]
+    FROM [dbo].[Coefficients] AS [Coefficients]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Apartaments_House" Association="Self.FK_Apartaments_House">
+            <End Role="House" EntitySet="House" />
+            <End Role="Apartaments" EntitySet="Apartaments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Apartment_House" Association="Self.FK_Apartment_House">
+            <End Role="House" EntitySet="House" />
+            <End Role="Apartment" EntitySet="Apartment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_House_ResidentialComplex" Association="Self.FK_House_ResidentialComplex">
+            <End Role="ResidentialComplex" EntitySet="ResidentialComplex" />
+            <End Role="House" EntitySet="House" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BaseDomNSLEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Apartaments">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HouseID" Type="Int32" Nullable="false" />
+          <Property Name="Number" Type="Int32" Nullable="false" />
+          <Property Name="Area" Type="Double" Nullable="false" />
+          <Property Name="CountOfRooms" Type="Int32" Nullable="false" />
+          <Property Name="Section" Type="Int32" Nullable="false" />
+          <Property Name="Floor" Type="Int32" Nullable="false" />
+          <Property Name="IsSold" Type="Boolean" Nullable="false" />
+          <Property Name="BuildingCost" Type="Int32" Nullable="false" />
+          <Property Name="ApartmentValueAdded" Type="Int32" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="House" Relationship="Self.FK_Apartaments_House" FromRole="Apartaments" ToRole="House" />
+        </EntityType>
+        <EntityType Name="Apartment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="HouseID" Type="Int32" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="Single" />
+          <Property Name="CountOfRooms" Type="Int32" />
+          <Property Name="Section" Type="Int32" />
+          <Property Name="Floor" Type="Int32" />
+          <Property Name="IsSold" Type="Boolean" />
+          <Property Name="BuildingCost" Type="Int64" />
+          <Property Name="ApartmentValueAdded" Type="Int32" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <NavigationProperty Name="House" Relationship="Self.FK_Apartment_House" FromRole="Apartment" ToRole="House" />
+        </EntityType>
+        <EntityType Name="House">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResidentialComplexID" Type="Int32" Nullable="false" />
+          <Property Name="Street" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Number" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BuildingCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="HouseValueAdded" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Apartaments" Relationship="Self.FK_Apartaments_House" FromRole="House" ToRole="Apartaments" />
+          <NavigationProperty Name="Apartment" Relationship="Self.FK_Apartment_House" FromRole="House" ToRole="Apartment" />
+          <NavigationProperty Name="ResidentialComplex" Relationship="Self.FK_House_ResidentialComplex" FromRole="House" ToRole="ResidentialComplex" />
+        </EntityType>
+        <EntityType Name="ResidentialComplex">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BuildingCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="ComplexValueAdded" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="House" Relationship="Self.FK_House_ResidentialComplex" FromRole="ResidentialComplex" ToRole="House" />
+        </EntityType>
+        <EntityType Name="Coefficients">
+          <Key>
+            <PropertyRef Name="area" />
+            <PropertyRef Name="areac" />
+            <PropertyRef Name="rooms" />
+            <PropertyRef Name="roomsc" />
+            <PropertyRef Name="apartmentc" />
+            <PropertyRef Name="housec" />
+            <PropertyRef Name="complexc" />
+            <PropertyRef Name="basec" />
+          </Key>
+          <Property Name="area" Type="Double" Nullable="false" />
+          <Property Name="areac" Type="Double" Nullable="false" />
+          <Property Name="rooms" Type="Int32" Nullable="false" />
+          <Property Name="roomsc" Type="Double" Nullable="false" />
+          <Property Name="apartmentc" Type="Double" Nullable="false" />
+          <Property Name="housec" Type="Double" Nullable="false" />
+          <Property Name="complexc" Type="Double" Nullable="false" />
+          <Property Name="basec" Type="Double" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Apartaments_House">
+          <End Role="House" Type="Self.House" Multiplicity="1" />
+          <End Role="Apartaments" Type="Self.Apartaments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Apartaments">
+              <PropertyRef Name="HouseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Apartment_House">
+          <End Role="House" Type="Self.House" Multiplicity="0..1" />
+          <End Role="Apartment" Type="Self.Apartment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="House">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Apartment">
+              <PropertyRef Name="HouseID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_House_ResidentialComplex">
+          <End Role="ResidentialComplex" Type="Self.ResidentialComplex" Multiplicity="1" />
+          <End Role="House" Type="Self.House" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResidentialComplex">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="House">
+              <PropertyRef Name="ResidentialComplexID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BaseDomNSLEEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Apartaments" EntityType="Self.Apartaments" />
+          <EntitySet Name="Apartment" EntityType="Self.Apartment" />
+          <EntitySet Name="House" EntityType="Self.House" />
+          <EntitySet Name="ResidentialComplex" EntityType="Self.ResidentialComplex" />
+          <EntitySet Name="Coefficients" EntityType="Self.Coefficients" />
+          <AssociationSet Name="FK_Apartaments_House" Association="Self.FK_Apartaments_House">
+            <End Role="House" EntitySet="House" />
+            <End Role="Apartaments" EntitySet="Apartaments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Apartment_House" Association="Self.FK_Apartment_House">
+            <End Role="House" EntitySet="House" />
+            <End Role="Apartment" EntitySet="Apartment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_House_ResidentialComplex" Association="Self.FK_House_ResidentialComplex">
+            <End Role="ResidentialComplex" EntitySet="ResidentialComplex" />
+            <End Role="House" EntitySet="House" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище BaseDomNSLEModelContainer" CdmEntityContainer="BaseDomNSLEEntities">
+          <EntitySetMapping Name="Apartaments">
+            <EntityTypeMapping TypeName="BaseDomNSLEModel.Apartaments">
+              <MappingFragment StoreEntitySet="Apartaments">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HouseID" ColumnName="HouseID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="CountOfRooms" ColumnName="CountOfRooms" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="IsSold" ColumnName="IsSold" />
+                <ScalarProperty Name="BuildingCost" ColumnName="BuildingCost" />
+                <ScalarProperty Name="ApartmentValueAdded" ColumnName="ApartmentValueAdded" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Apartment">
+            <EntityTypeMapping TypeName="BaseDomNSLEModel.Apartment">
+              <MappingFragment StoreEntitySet="Apartment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HouseID" ColumnName="HouseID" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="CountOfRooms" ColumnName="CountOfRooms" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="Floor" ColumnName="Floor" />
+                <ScalarProperty Name="IsSold" ColumnName="IsSold" />
+                <ScalarProperty Name="BuildingCost" ColumnName="BuildingCost" />
+                <ScalarProperty Name="ApartmentValueAdded" ColumnName="ApartmentValueAdded" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="House">
+            <EntityTypeMapping TypeName="BaseDomNSLEModel.House">
+              <MappingFragment StoreEntitySet="House">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ResidentialComplexID" ColumnName="ResidentialComplexID" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="BuildingCost" ColumnName="BuildingCost" />
+                <ScalarProperty Name="HouseValueAdded" ColumnName="HouseValueAdded" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResidentialComplex">
+            <EntityTypeMapping TypeName="BaseDomNSLEModel.ResidentialComplex">
+              <MappingFragment StoreEntitySet="ResidentialComplex">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="BuildingCost" ColumnName="BuildingCost" />
+                <ScalarProperty Name="ComplexValueAdded" ColumnName="ComplexValueAdded" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Coefficients">
+            <EntityTypeMapping TypeName="BaseDomNSLEModel.Coefficients">
+              <MappingFragment StoreEntitySet="Coefficients">
+                <ScalarProperty Name="area" ColumnName="area" />
+                <ScalarProperty Name="areac" ColumnName="areac" />
+                <ScalarProperty Name="rooms" ColumnName="rooms" />
+                <ScalarProperty Name="roomsc" ColumnName="roomsc" />
+                <ScalarProperty Name="apartmentc" ColumnName="apartmentc" />
+                <ScalarProperty Name="housec" ColumnName="housec" />
+                <ScalarProperty Name="complexc" ColumnName="complexc" />
+                <ScalarProperty Name="basec" ColumnName="basec" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
