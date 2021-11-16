@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace IAPP
 {
     /// <summary>
-    /// Логика взаимодействия для Page1.xaml
+    /// Логика взаимодействия для AddEditCoef.xaml
     /// </summary>
-    public partial class Coef : Page
+    public partial class AddEditCoef : Page
     {
-        public Coef()
+        public AddEditCoef()
         {
             InitializeComponent();
-            DGCoef.ItemsSource = BaseDomNSLEEntities.GetContext().Coefficients.ToList();
-        }
-
-        private void BtnEdit_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MEF.Navigate(new AddEditCoef());
         }
     }
 }

@@ -5,15 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IAPP"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="520" MinWidth="1190">
+        Title="MainWindow" MinHeight="520" MinWidth="1190"
+        Width="1190" Height="520">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="Cyan"/>
-        <Grid Grid.Row="2" Background="Cyan"/>
+        <Grid Grid.Row="0" Background="#FF329ED8"/>
+        <Grid Grid.Row="2" Background="#FF329ED8"/>
         <Frame Name="MEF" Grid.Row="1" ContentRendered="MEF_ContentRendered" NavigationUIVisibility="Hidden"/>
         <Button x:Name="BtnBack" Click="BtnBack_Click" Height="30" Width="100" Grid.Row="0" Margin="1075,10,15,10" Content="Back" FontSize="15"/>
     </Grid>
