@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddEditCoef.xaml.cs">
+      <DependentUpon>AddEditCoef.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Apartaments.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -81,6 +84,10 @@
     <Compile Include="ResidentialComplex.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Page Include="AddEditCoef.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
