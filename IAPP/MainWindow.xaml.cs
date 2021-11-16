@@ -23,6 +23,7 @@ namespace IAPP
         public MainWindow()
         {
             InitializeComponent();
+            MEF.Navigate(new Coefficients());
         }
     }
 }

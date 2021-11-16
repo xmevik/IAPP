@@ -18,7 +18,6 @@ namespace IAPP
         public House()
         {
             this.Apartaments = new HashSet<Apartaments>();
-            this.Apartment = new HashSet<Apartment>();
         }
     
         public int ID { get; set; }
@@ -31,8 +30,6 @@ namespace IAPP
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Apartaments> Apartaments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Apartment> Apartment { get; set; }
         public virtual ResidentialComplex ResidentialComplex { get; set; }
     }
 }
