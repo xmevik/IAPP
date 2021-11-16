@@ -67,9 +67,6 @@
     <Compile Include="Apartaments.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Apartment.cs">
-      <DependentUpon>BaseModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="BaseModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

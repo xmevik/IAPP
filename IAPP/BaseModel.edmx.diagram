@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f9b11c346478430ab11cbabb363e692e" Name="Diagram1">
-        <EntityTypeShape EntityType="BaseDomNSLEModel.Apartaments" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BaseDomNSLEModel.Apartaments" Width="1.5" PointX="5.5" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseDomNSLEModel.House" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseDomNSLEModel.ResidentialComplex" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseDomNSLEModel.Coefficients" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />

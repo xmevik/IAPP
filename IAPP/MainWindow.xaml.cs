@@ -23,6 +23,25 @@ namespace IAPP
         public MainWindow()
         {
             InitializeComponent();
+            Manager.MEF = MEF;
+            Manager.MEF.Navigate(new AddEditPage());
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MEF.GoBack();
+        }
+
+        private void MEF_ContentRendered(object sender, EventArgs e)
+        {
+            if(MEF.CanGoBack)
+            {
+                BtnBack.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BtnBack.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

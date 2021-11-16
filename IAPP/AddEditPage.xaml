@@ -9,6 +9,7 @@
       Title="AddEditPage">
 
     <Grid>
-        
+        <Button Name="BtnPush" Click="BtnPush_Click" Background="FloralWhite" Content="🅱🅰🅲🅺" FontSize="20" Height="50" Width="150"/>
+
     </Grid>
 </Page>
