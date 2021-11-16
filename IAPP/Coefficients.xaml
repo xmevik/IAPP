@@ -5,10 +5,26 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:IAPP"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Coef">
+      d:DesignHeight="450"
+      Title="Coef" Width="1177">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="DGCoef" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Площадь квартиры(кв.м)" Binding="{Binding area}"/>
+                <DataGridTextColumn Header="Стоимость 1кв.м" Binding="{Binding areac}"/>
+                <DataGridTextColumn Header="Кол-во комнат" Binding="{Binding rooms}"/>
+                <DataGridTextColumn Header="Стоимость комнаты" Binding="{Binding roomsc}"/>
+                <DataGridTextColumn Header="Стоимость отделки" Binding="{Binding apartmentc}"/>
+                <DataGridTextColumn Header="Стоимость квартиры в доме" Binding="{Binding housec}"/>
+                <DataGridTextColumn Header="Стоимость на строительство жилищного дома" Binding="{Binding complexc}"/>
+                <DataGridTextColumn Header="Стоимость на строительство" Binding="{Binding basec}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
