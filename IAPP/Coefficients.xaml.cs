@@ -23,6 +23,7 @@ namespace IAPP
         public Coef()
         {
             InitializeComponent();
+            DGCoef.ItemsSource = BaseDomNSLEEntities.GetContext().Coefficients.ToList();
         }
     }
 }
