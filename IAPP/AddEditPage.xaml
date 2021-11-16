@@ -5,11 +5,26 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:IAPP"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="365" d:DesignWidth="800"
       Title="AddEditPage">
 
-    <Grid>
-        <Button Name="BtnPush" Click="BtnPush_Click" Background="FloralWhite" Content="🅱🅰🅲🅺" FontSize="20" Height="50" Width="150"/>
+    <Grid RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <ComboBox Name="JKComboBox" Margin="273,76,388,261"/>
+        <TextBlock Text="Жилой комплекс:" Margin="157,76,541,261"/>
+        <ComboBox x:Name="HomeJKComboBox" Margin="500,76,161,261"/>
+        <TextBlock Text="Дом в ЖК:" Margin="437,76,297,261"/>
+        <TextBox Margin="273,124,388,213"/>
+        <TextBlock Text="Номер квартиры:" Margin="157,124,535,213"/>
+        <TextBox Margin="273,174,388,163"/>
+        <TextBlock Text="Площадь квартиры:" Margin="157,174,526,163"/>
+        <TextBox Margin="273,223,388,113"/>
+        <TextBlock Text="Кол-во комнат:" Margin="157,223,545,113"/>
+        <TextBox Margin="273,271,388,66"/>
+        <TextBlock Text="Секция/Подъезд:" Margin="157,271,545,66"/>
+        <TextBox Margin="500,124,161,213"/>
+        <TextBlock Text="Этаж:" Margin="437,124,330,213"/>
+        <RadioButton Content="Продана" Height="20" Width="100" Margin="437,176,263,169"/>
+        <RadioButton Content="В продаже" Height="20" Width="100" Margin="437,210,263,135"/>
 
     </Grid>
 </Page>

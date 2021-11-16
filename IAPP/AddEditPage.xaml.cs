@@ -24,10 +24,5 @@ namespace IAPP
         {
             InitializeComponent();
         }
-
-        private void BtnPush_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }
