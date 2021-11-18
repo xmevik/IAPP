@@ -1,0 +1,15 @@
+﻿<Page x:Class="IAPP.NavigateButtonPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IAPP"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="NavigateButtonPage">
+
+    <Grid>
+        <Button Width="150" Height="30" Margin="325,158,325,262">CoefficientsPage</Button>
+        <Button Width="150" Height="30">AddEditPage</Button>
+    </Grid>
+</Page>
