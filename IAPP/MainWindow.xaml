@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IAPP"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="520" MinWidth="1190"
-        Width="1190" Height="520">
+        Title="MainWindow" MinHeight="450" MinWidth="800"
+        Width="800" Height="450">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
