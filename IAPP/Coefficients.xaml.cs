@@ -23,12 +23,7 @@ namespace IAPP
         public Coef()
         {
             InitializeComponent();
-            DGCoef.ItemsSource = BaseDomNSLEEntities.GetContext().Coefficients.ToList();
-        }
-
-        private void BtnEdit_Click(object sender, RoutedEventArgs e)
-        {
-            Manager.MEF.Navigate(new AddEditCoef());
+            
         }
     }
 }
