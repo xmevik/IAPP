@@ -24,5 +24,15 @@ namespace IAPP
         {
             InitializeComponent();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Manager.MEF.Navigate(Manager.coefficientsPage);
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Manager.MEF.Navigate(Manager.addEditPage);
+        }
     }
 }

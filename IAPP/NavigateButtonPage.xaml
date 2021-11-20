@@ -9,7 +9,12 @@
       Title="NavigateButtonPage">
 
     <Grid>
-        <Button Width="150" Height="30" Margin="325,158,325,262">CoefficientsPage</Button>
-        <Button Width="150" Height="30">AddEditPage</Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button Width="150" Grid.Row="0" Height="30" Content="CoefficientsPage" Click="Button_Click_2"/>
+        <Button Width="150" Grid.Row="1" Height="30"  Content="AddEditPage" Click="Button_Click_3"/>
     </Grid>
 </Page>

@@ -10,5 +10,8 @@ namespace IAPP
     internal class Manager
     {
         public static Frame MEF { get; set; }
+        public static AddEditPage addEditPage { get; set; }
+        public static Coefficients coefficientsPage { get; set; }
+        public static NavigateButtonPage navigateButtonsPage { get; set; }
     }
 }

@@ -24,7 +24,12 @@ namespace IAPP
         {
             InitializeComponent();
             Manager.MEF = MEF;
-            Manager.MEF.Navigate(new NavigateButtonPage());
+
+            Manager.addEditPage = new AddEditPage();
+            Manager.coefficientsPage = new Coefficients();
+            Manager.navigateButtonsPage = new NavigateButtonPage();
+
+            Manager.MEF.Navigate(Manager.navigateButtonsPage);
         }
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
