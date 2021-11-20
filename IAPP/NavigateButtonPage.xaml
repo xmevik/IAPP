@@ -12,9 +12,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="40"></RowDefinition>
             <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Button Width="150" Grid.Row="0" Height="30" Content="CoefficientsPage" Click="Button_Click_2"/>
         <Button Width="150" Grid.Row="1" Height="30"  Content="AddEditPage" Click="Button_Click_3"/>
+        <Button Width="150" Grid.Row="2" Height="30"  Content="AppartmentsListPage" Click="Button_Click"/>
     </Grid>
 </Page>

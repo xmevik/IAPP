@@ -28,6 +28,7 @@ namespace IAPP
             Manager.addEditPage = new AddEditPage();
             Manager.coefficientsPage = new Coefficients();
             Manager.navigateButtonsPage = new NavigateButtonPage();
+            Manager.apartmentsListPage = new ApartmentsListPage();
 
             Manager.MEF.Navigate(Manager.navigateButtonsPage);
         }

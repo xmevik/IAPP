@@ -34,5 +34,10 @@ namespace IAPP
         {
             Manager.MEF.Navigate(Manager.addEditPage);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MEF.Navigate(Manager.apartmentsListPage);
+        }
     }
 }

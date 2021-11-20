@@ -16,6 +16,6 @@
         <Grid Grid.Row="0" Background="#FF329ED8"/>
         <Grid Grid.Row="2" Background="#FF329ED8"/>
         <Frame Name="MEF" Grid.Row="1" ContentRendered="MEF_ContentRendered" NavigationUIVisibility="Hidden"/>
-        <Button x:Name="BtnBack" Click="BtnBack_Click" Height="30" Width="100" Grid.Row="0" HorizontalAlignment="Right" Content="Back" FontSize="15"/>
+        <Button x:Name="BtnBack" Click="BtnBack_Click" Height="30" Width="100" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,10,0" Content="Back" FontSize="15"/>
     </Grid>
 </Window>
