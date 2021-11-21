@@ -9,7 +9,7 @@
       Title="AddEditPage">
 
     <Grid RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <ComboBox SelectedItem="{Binding Name}" DisplayMemberPath="Name" x:Name="JKComboBox" Margin="273,76,388,261"/>
+        <!--<ComboBox SelectedItem="{Binding Name}" DisplayMemberPath="Name" x:Name="JKComboBox" Margin="273,76,388,261"/>
         <TextBlock Text="Жилой комплекс:" Margin="157,76,541,261"/>
         <ComboBox SelectedItem="{Binding Street}" DisplayMemberPath="Street" x:Name="HomeJKComboBox" Margin="500,76,161,261"/>
         <TextBlock Text="Дом в ЖК:" Margin="437,76,297,261"/>
@@ -23,11 +23,11 @@
         <TextBlock Text="Секция/Подъезд:" Margin="157,271,545,66"/>
         <ComboBox SelectedItem="{Binding Floor}" DisplayMemberPath="Floor" x:Name="FlorComboBox" Margin="500,124,161,213"/>
         <TextBlock Text="Этаж:" Margin="437,124,330,213"/>
-        <!--<RadioButton Content="Продана" Height="20" Width="100" Margin="437,176,263,169"/>
-        <RadioButton Content="В продаже" Height="20" Width="100" Margin="537,176,163,169"/>-->
+        --><!--<RadioButton Content="Продана" Height="20" Width="100" Margin="437,176,263,169"/>
+        <RadioButton Content="В продаже" Height="20" Width="100" Margin="537,176,163,169"/>--><!--
         <TextBlock TextWrapping="Wrap" Text="Цена отделки квартиры:" Height="20" VerticalAlignment="Bottom" TextAlignment="Center" Margin="437,0,218,97"/>
         <TextBlock Width="200" FontSize="18" Text="" Margin="443,221,157,122"/>
         <TextBlock Text="Коэффициэнт добавочной стоймости на отделку квартиры:" Margin="443,201,30,146" />
-        <TextBlock Text="" Width="200" Margin="443,271,157,73"/>
+        <TextBlock Text="" Width="200" Margin="443,271,157,73"/>-->
     </Grid>
 </Page>
