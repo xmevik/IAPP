@@ -85,6 +85,8 @@ namespace IAPP
         private void updateApartmentsList()
         {
             zeroDataAlert.Visibility = Visibility.Collapsed;
+            LViewApartments.Visibility = Visibility.Visible;
+
             var apartments = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
 
             if (houseComboBox.SelectedIndex > 0)
