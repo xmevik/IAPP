@@ -5,18 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IAPP"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="450" MinWidth="800"
+        Title="Менеджер поиска квартир" MinHeight="450" MinWidth="810"
         Width="800" Height="450">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition/>
             <RowDefinition Height="35"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="#FF329ED8"/>
-        <Grid Grid.Row="2" Background="#FF329ED8"/>
+        <Grid>
+            <Image x:Name="img" Source="Resources/21312312.png"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <TextBlock x:Name="titelTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible" Text="Страница навигации" FontSize="20">
+                <TextBlock.OpacityMask>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.OpacityMask>
+            </TextBlock>
+        </Grid>
         <Frame Name="MEF" Grid.Row="1" ContentRendered="MEF_ContentRendered" NavigationUIVisibility="Hidden"/>
-        <TextBlock x:Name="titelTextBlock" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="24" Margin="30,0,0,0" Foreground="White" FontFamily="Arial">Главная страница</TextBlock>
-        <Button x:Name="BtnBack" Click="BtnBack_Click" Height="30" Width="100" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,10,0" Content="Back" FontSize="15" Visibility="Hidden"/>
+        <Button x:Name="BtnBack" Click="BtnBack_Click" Width="100" Grid.Row="0" HorizontalAlignment="Right" Margin="690,10,0,10" Content="Назад" FontSize="15" Visibility="Visible" Background="#FF02B9D0" VerticalAlignment="Center" Opacity="0.99" Foreground="Black">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Window>

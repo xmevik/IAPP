@@ -24,9 +24,10 @@ namespace IAPP
         {
             InitializeComponent();
             Manager.MEF = MEF;
+            Manager.img = img;
             Manager.titel = titelTextBlock;
             Manager.addEditPage = new AddEditPage();
-            Manager.coefficientsPage = new Coefficients();
+            Manager.coefficientsPage = new Coef();
             Manager.navigateButtonsPage = new NavigateButtonPage();
             Manager.apartmentsListPage = new ApartmentsListPage();
             Manager.editApartmentPage = new EditApartmentPage(null);

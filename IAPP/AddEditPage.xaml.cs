@@ -23,13 +23,13 @@ namespace IAPP
         public AddEditPage()
         {
             InitializeComponent();
-            JKComboBox.ItemsSource = BaseDomNSLEEntities.GetContext().ResidentialComplex.ToList();
-            HomeJKComboBox.ItemsSource = BaseDomNSLEEntities.GetContext().House.ToList();
-            HouseComboBox.ItemsSource = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
-            AreaComboBox.ItemsSource = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
-            CountOfRooms.ItemsSource = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
-            SectionComboBox.ItemsSource = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
-            FlorComboBox.ItemsSource = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
+            //JKComboBox.ItemsSource = BaseDomNSLEEntities.GetContext().ResidentialComplex.ToList();
+            //HomeJKComboBox.ItemsSource = BaseDomNSLEEntities.GetContext().House.ToList();
+            //HouseComboBox.ItemsSource = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
+            //AreaComboBox.ItemsSource = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
+            //CountOfRooms.ItemsSource = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
+            //SectionComboBox.ItemsSource = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
+            //FlorComboBox.ItemsSource = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
 
         }
     }
