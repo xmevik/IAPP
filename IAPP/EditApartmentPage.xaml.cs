@@ -21,11 +21,22 @@ namespace IAPP
     public partial class EditApartmentPage : Page
     {
         public Apartaments apartnentData;
-        public EditApartmentPage()
+        public EditApartmentPage(Apartaments apart)
         {
             InitializeComponent();
             var houses = BaseDomNSLEEntities.GetContext().House.ToList();
             nameTextCombobox.ItemsSource = houses;
+            apartnentData = apart;
+
+            if (apartnentData != null)
+            {
+                areaTextBlock.Text = apartnentData.Area.ToString();
+                floorTextBlock.Text = apartnentData.Floor.ToString();
+                countOfRoomsTextBlock.Text = apartnentData.CountOfRooms.ToString();
+                sectionTextBlock.Text = apartnentData.Section.ToString();
+                statusTextBlock.IsChecked = Convert.ToBoolean(apartnentData.IsSold);
+                nameTextCombobox.SelectedItem = apartnentData.House.ID;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

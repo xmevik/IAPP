@@ -20,10 +20,6 @@ namespace IAPP
     /// </summary>
     public partial class ApartmentsListPage : Page
     {
-        struct apartments
-        {
-
-        }
         public ApartmentsListPage()
         {
             InitializeComponent();
@@ -53,6 +49,8 @@ namespace IAPP
             deleteBtn.Visibility = Visibility.Collapsed;
             filterBtn.Visibility = Visibility.Collapsed;
             pagginateButtonsWrapPanel.Visibility = Visibility.Collapsed;
+            editBtn.Visibility = Visibility.Collapsed;
+
         }
 
         private void closeFilterBtn_Click(object sender, RoutedEventArgs e)
@@ -61,6 +59,7 @@ namespace IAPP
             addBtn.Visibility = Visibility.Visible;
             deleteBtn.Visibility = Visibility.Visible;
             filterBtn.Visibility = Visibility.Visible;
+            editBtn.Visibility = Visibility.Visible;
             pagginateButtonsWrapPanel.Visibility = Visibility.Visible;
 
         }
@@ -89,6 +88,9 @@ namespace IAPP
 
             var apartments = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
 
+            if (residentialComplexComboBox.SelectedIndex > 0)
+                apartments = apartments.Where((item) => item.House.ResidentialComplexID == residentialComplexComboBox.SelectedIndex).ToList();
+
             if (houseComboBox.SelectedIndex > 0)
                 apartments = apartments.Where((item) => item.HouseID == houseComboBox.SelectedIndex).ToList();
 
@@ -97,6 +99,9 @@ namespace IAPP
 
             if (sectionTextBox.Text != "")
                 apartments = apartments.Where((item) => item.Section.ToString() == sectionTextBox.Text).ToList();
+
+            if (isSoldCheckBox.IsChecked.Value)
+                apartments = apartments.Where((item) => item.IsSold).ToList();
 
             LViewApartments.ItemsSource = apartments;
             if (apartments.Count <= 0)
@@ -139,13 +144,33 @@ namespace IAPP
 
         private void addBtn_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MEF.Navigate(Manager.editApartmentPage);
+            Manager.MEF.Navigate(new EditApartmentPage(null));
             Manager.titel.Text = "Редактирование списка квартир";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(e.OriginalSource.ToString());
+            var HotelForRemove = LViewApartments.SelectedItems.Cast<Apartaments>().ToList();
+            if (HotelForRemove.Count == 1)
+            {
+                Manager.MEF.Navigate(new EditApartmentPage(HotelForRemove.First<Apartaments>()));
+                Manager.titel.Text = "Редактирование списка квартир";
+            }
+            else
+            {
+                MessageBox.Show("Выберите одну квартиру");
+            }
+            
+        }
+
+        private void isSoldCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            updateApartmentsList();
+        }
+
+        private void isSoldCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            updateApartmentsList();
         }
     }
 }
