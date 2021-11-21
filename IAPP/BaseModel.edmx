@@ -21,26 +21,6 @@
           <Property Name="ApartmentValueAdded" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="Coefficients">
-          <Key>
-            <PropertyRef Name="area" />
-            <PropertyRef Name="areac" />
-            <PropertyRef Name="rooms" />
-            <PropertyRef Name="roomsc" />
-            <PropertyRef Name="apartmentc" />
-            <PropertyRef Name="housec" />
-            <PropertyRef Name="complexc" />
-            <PropertyRef Name="basec" />
-          </Key>
-          <Property Name="area" Type="float" Nullable="false" />
-          <Property Name="areac" Type="float" Nullable="false" />
-          <Property Name="rooms" Type="int" Nullable="false" />
-          <Property Name="roomsc" Type="float" Nullable="false" />
-          <Property Name="apartmentc" Type="float" Nullable="false" />
-          <Property Name="housec" Type="float" Nullable="false" />
-          <Property Name="complexc" Type="float" Nullable="false" />
-          <Property Name="basec" Type="float" Nullable="false" />
-        </EntityType>
         <EntityType Name="House">
           <Key>
             <PropertyRef Name="ID" />
@@ -91,7 +71,6 @@
         </Association>
         <EntityContainer Name="Хранилище BaseDomNSLEModelContainer">
           <EntitySet Name="Apartaments" EntityType="Self.Apartaments" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Coefficients" EntityType="Self.Coefficients" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="House" EntityType="Self.House" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ResidentialComplex" EntityType="Self.ResidentialComplex" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Apartaments_House" Association="Self.FK_Apartaments_House">
@@ -151,26 +130,6 @@
           <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="House" Relationship="Self.FK_House_ResidentialComplex" FromRole="ResidentialComplex" ToRole="House" />
         </EntityType>
-        <EntityType Name="Coefficients">
-          <Key>
-            <PropertyRef Name="area" />
-            <PropertyRef Name="areac" />
-            <PropertyRef Name="rooms" />
-            <PropertyRef Name="roomsc" />
-            <PropertyRef Name="apartmentc" />
-            <PropertyRef Name="housec" />
-            <PropertyRef Name="complexc" />
-            <PropertyRef Name="basec" />
-          </Key>
-          <Property Name="area" Type="Double" Nullable="false" />
-          <Property Name="areac" Type="Double" Nullable="false" />
-          <Property Name="rooms" Type="Int32" Nullable="false" />
-          <Property Name="roomsc" Type="Double" Nullable="false" />
-          <Property Name="apartmentc" Type="Double" Nullable="false" />
-          <Property Name="housec" Type="Double" Nullable="false" />
-          <Property Name="complexc" Type="Double" Nullable="false" />
-          <Property Name="basec" Type="Double" Nullable="false" />
-        </EntityType>
         <Association Name="FK_Apartaments_House">
           <End Role="House" Type="Self.House" Multiplicity="1" />
           <End Role="Apartaments" Type="Self.Apartaments" Multiplicity="*" />
@@ -199,7 +158,6 @@
           <EntitySet Name="Apartaments" EntityType="Self.Apartaments" />
           <EntitySet Name="House" EntityType="Self.House" />
           <EntitySet Name="ResidentialComplex" EntityType="Self.ResidentialComplex" />
-          <EntitySet Name="Coefficients" EntityType="Self.Coefficients" />
           <AssociationSet Name="FK_Apartaments_House" Association="Self.FK_Apartaments_House">
             <End Role="House" EntitySet="House" />
             <End Role="Apartaments" EntitySet="Apartaments" />
@@ -255,20 +213,6 @@
                 <ScalarProperty Name="BuildingCost" ColumnName="BuildingCost" />
                 <ScalarProperty Name="ComplexValueAdded" ColumnName="ComplexValueAdded" />
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Coefficients">
-            <EntityTypeMapping TypeName="BaseDomNSLEModel.Coefficients">
-              <MappingFragment StoreEntitySet="Coefficients">
-                <ScalarProperty Name="area" ColumnName="area" />
-                <ScalarProperty Name="areac" ColumnName="areac" />
-                <ScalarProperty Name="rooms" ColumnName="rooms" />
-                <ScalarProperty Name="roomsc" ColumnName="roomsc" />
-                <ScalarProperty Name="apartmentc" ColumnName="apartmentc" />
-                <ScalarProperty Name="housec" ColumnName="housec" />
-                <ScalarProperty Name="complexc" ColumnName="complexc" />
-                <ScalarProperty Name="basec" ColumnName="basec" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

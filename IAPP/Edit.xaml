@@ -1,0 +1,102 @@
+﻿<Page x:Class="IAPP.Edit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IAPP"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Edit">
+
+    <Grid>
+        <Grid x:Name="GridHouses" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="ID" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding ID}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            
+            <TextBlock Text="Номер дома" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="{Binding Number}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            
+            <TextBlock Text="Стоимость дома" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding BuildingCost}" Grid.Row="2" Grid.Column="1" Width="250" Height="25" HorizontalAlignment="Left" x:Name="tbBuiltCost"/>
+            
+            <TextBlock Text="Добавочная стоимость отедлки" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding HouseValueAdded}" Grid.Row="3" Grid.Column="1" Width="250" Height="25" HorizontalAlignment="Left"/>
+            
+            <Button Content="Сохранить" Grid.Row="4" Grid.Column="1" Height="25"  Width="150" BorderBrush="#FF329ED8" Background="#FF02B9D0" Click="BtnSave_Click" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Grid x:Name="GridApartments" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="ID" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding ID}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBlock Text="Площадь" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding Area}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBlock Text="Кол-во комнат" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding CountOfRooms}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBlock Text="Стоимость застройки дома" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Text="{Binding BuildingCost}" Grid.Row="3" Grid.Column="1" Height="25" Width="250" HorizontalAlignment="Left"/>
+            <TextBlock Text="Добавочная стоимост отделки" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Text="{Binding ApartmentValueAdded}" Grid.Row="4" Grid.Column="1" Height="25" Width="250" HorizontalAlignment="Left"/>
+            
+            <Button Content="Сохранить" Grid.Row="5" Grid.Column="1" Height="25"  Width="150" BorderBrush="#FF329ED8" Background="#FF02B9D0" Click="BtnSave_Click" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+        <Grid x:Name="GridComplex" Visibility="Hidden">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Название отеля" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding Name}" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            <TextBlock Text="Стоимость застройки" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Text="{Binding BuildingCost}" Grid.Row="1" Grid.Column="1" Height="25" Width="250" HorizontalAlignment="Left"/>
+            <TextBlock Text="Доб стоимость застройки комплекса" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Text="{Binding ComplexValueAdded}" Grid.Row="2" Grid.Column="1" Height="25" Width="250" HorizontalAlignment="Left"/>
+            <Button Content="Сохранить" Grid.Row="4" Grid.Column="1" Height="25"  Width="150" BorderBrush="#FF329ED8" Background="#FF02B9D0" Click="BtnSave_Click" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

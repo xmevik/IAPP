@@ -1,0 +1,82 @@
+﻿<Page x:Class="IAPP.EditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IAPP"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditPage">
+
+    <Grid>
+        <Grid x:Name="GridHouses" Visibility="Hidden">
+            <DataGrid x:Name="DGHouse" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50"/>
+                    <DataGridTextColumn Header="Номер дома" Binding="{Binding Number}" Width="80"/>
+                    <DataGridTextColumn Header="Стоимость строительства" Binding="{Binding BuildingCost}" Width="*"/>
+                    <DataGridTextColumn Header="Добавочная стоимость отедлки" Binding="{Binding HouseValueAdded}" Width="*"/>
+                    <DataGridTemplateColumn Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Редактировать" Grid.Row="2" Height="25"  Width="150" BorderBrush="#FF329ED8" Background="#FF02B9D0" Click="BtnEdit_Click" VerticalAlignment="Top">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="5"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid x:Name="GridApartments" Visibility="Hidden">
+            <DataGrid x:Name="DGApartments" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50"/>
+                    <DataGridTextColumn Header="Площадь" Binding="{Binding Area}" Width="65"/>
+                    <DataGridTextColumn Header="Кол-во комнат" Binding="{Binding CountOfRooms}" Width="100"/>
+                    <DataGridTextColumn Header="Стоимость застройки дома" Binding="{Binding BuildingCost}" Width="160"/>
+                    <DataGridTextColumn Header="Добавочная стоимост отделки" Binding="{Binding ApartmentValueAdded}" Width="*"/>
+                    <DataGridTemplateColumn Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Редактировать" Grid.Row="2" Height="25"  Width="150" BorderBrush="#FF329ED8" Background="#FF02B9D0" Click="BtnEdit_Click" VerticalAlignment="Top">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="5"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid x:Name="GridComplex" Visibility="Hidden">
+            <DataGrid x:Name="DGComplex" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название отеля" Binding="{Binding Name}" Width="Auto"/>
+                    <DataGridTextColumn Header="Стоимость застройки" Binding="{Binding BuildingCost}" Width="Auto"/>
+                    <DataGridTextColumn Header="Доб стоимость застройки комплекса" Binding="{Binding ComplexValueAdded}" Width="Auto"/>
+                    <DataGridTemplateColumn Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Редактировать" Grid.Row="2" Height="25"  Width="150" BorderBrush="#FF329ED8" Background="#FF02B9D0" Click="BtnEdit_Click" VerticalAlignment="Top">
+                                    <Button.Resources>
+                                        <Style TargetType="Border">
+                                            <Setter Property="CornerRadius" Value="5"/>
+                                        </Style>
+                                    </Button.Resources>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Page>

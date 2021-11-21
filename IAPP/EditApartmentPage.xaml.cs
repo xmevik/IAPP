@@ -74,6 +74,7 @@ namespace IAPP
             catch (Exception ex)
             {
                 MessageBox.Show("некорректные данные");
+                //MessageBox.Show(ex.Message.ToString()); //Зачем тогда нужена переменная ex??
             }
             
 

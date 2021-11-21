@@ -15,6 +15,10 @@ namespace IAPP
     
     public partial class BaseDomNSLEEntities : DbContext
     {
+        public BaseDomNSLEEntities()
+            : base("name=BaseDomNSLEEntities")
+        {
+        }
         private static BaseDomNSLEEntities _context;
         public static BaseDomNSLEEntities GetContext()
         {
@@ -31,6 +35,5 @@ namespace IAPP
         public virtual DbSet<Apartaments> Apartaments { get; set; }
         public virtual DbSet<House> House { get; set; }
         public virtual DbSet<ResidentialComplex> ResidentialComplex { get; set; }
-        public virtual DbSet<Coefficients> Coefficients { get; set; }
     }
 }

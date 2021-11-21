@@ -10,43 +10,30 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Canvas x:Name="canvas" Grid.Row="1">
-            
-            <TextBox HorizontalAlignment="Left" Margin="426,65,0,0" Text="" VerticalAlignment="Top" Width="120" Height="20" x:Name="area"/>
-            <TextBlock Text="Площадь квартиры(кв.м)" Height="20" Width="150" Margin="217,65,433,280"/>
-            
-            <TextBox HorizontalAlignment="Left" Margin="426,86,0,0" Text="" VerticalAlignment="Top" Width="120" Height="20" x:Name="areac"/>
-            <TextBlock Text="Стоимость 1 кв.м" Height="20" Width="150" Margin="217,86,433,259"/>
-            
-            <TextBox HorizontalAlignment="Left" Margin="426,106,0,0" Text="" VerticalAlignment="Top" Width="120" Height="20" x:Name="rooms"/>
-            <TextBlock Text="Количество комнат" Height="20" Width="150" Margin="217,106,433,239"/>
-            
-            <TextBox HorizontalAlignment="Left" Margin="426,126,0,0" Text="" VerticalAlignment="Top" Width="120" Height="20" x:Name="romsc"/>
-            <TextBlock Text="Стоимость комнаты"  Height="20" Width="150" Margin="217,126,433,219"/>
-            
-            <TextBox HorizontalAlignment="Left" Margin="426,146,0,0" Text="" VerticalAlignment="Top" Width="120" Height="20" x:Name="apartmentc"/>
-            <TextBlock Text="Стоимость отделки" Height="20" Width="150" Margin="217,146,433,199"/>
-            
-            <TextBox HorizontalAlignment="Left" Margin="426,166,0,0" Text="" VerticalAlignment="Top" Width="120" Height="20" x:Name="housec"/>
-            <TextBlock Text="Стоимость в доме" Height="20" Width="150" Margin="217,166,433,179"/>
-            
-            <TextBox HorizontalAlignment="Left" Margin="426,186,0,0" Text="" VerticalAlignment="Top" Width="120" Height="20" x:Name="complexc"/>
-            <TextBlock Text="Стоимость на строительство" Grid.Row="1" Height="20" Margin="217,186,419,159"/>
-            
-            <TextBox HorizontalAlignment="Left" Margin="426,206,0,0" Text="" VerticalAlignment="Top" Width="120" Height="20" x:Name="basec"/>
-            <TextBlock Text="Базовая стоимость на строительство" Height="20" Margin="217,206,379,139"/>
-
-            <Button Content="Сохранить изменения" Canvas.Left="330" Canvas.Top="242" Height="25" Width="140" BorderBrush="#FF329ED8" Background="#FF02B9D0" Click="BtnSave_Click">
-                <Button.Resources>
-                    <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="5"/>
-                    </Style>
-                </Button.Resources>
-            </Button>
-        </Canvas>
+        <Button Content="Изменить коэффициенты для дома" Grid.Row="0" Height="25" Width="200" BorderBrush="#FF329ED8" Background="#FF02B9D0" Click="BtnHouse_Click" VerticalAlignment="Bottom">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Изменить коэффициенты для апартаментов" Grid.Row="1" Height="25" Width="250" BorderBrush="#FF329ED8" Background="#FF02B9D0" Click="BtnApartments_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Изменить коэффициенты для жилищного комплекса" Grid.Row="2" Height="25"  Width="300" BorderBrush="#FF329ED8" Background="#FF02B9D0" Click="BtnComplex_Click" VerticalAlignment="Top">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Page>

@@ -4,11 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7d4bb43ec0a84bea931fbac43f6ad442" Name="Diagram1">
+      <Diagram DiagramId="5a5089b7048d4306b2a371156d44dcf4" Name="Diagram1">
         <EntityTypeShape EntityType="BaseDomNSLEModel.Apartaments" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseDomNSLEModel.House" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BaseDomNSLEModel.ResidentialComplex" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BaseDomNSLEModel.Coefficients" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <AssociationConnector Association="BaseDomNSLEModel.FK_Apartaments_House" ManuallyRouted="false" />
         <AssociationConnector Association="BaseDomNSLEModel.FK_House_ResidentialComplex" ManuallyRouted="false" />
       </Diagram>
