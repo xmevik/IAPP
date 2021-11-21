@@ -28,7 +28,7 @@ namespace IAPP
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             Manager.MEF.Navigate(Manager.coefficientsPage);
-            Manager.titel.Text = "coefficientsPage";
+            Manager.titel.Text = "Просмотр и изминение коэффициентов";
 
         }
 

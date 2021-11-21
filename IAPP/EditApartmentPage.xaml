@@ -44,6 +44,13 @@
         <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" Text="Статус:  "  TextAlignment="Right"></TextBlock>
         <CheckBox x:Name="statusTextBlock"  Margin="8,0,10,0" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding status}"></CheckBox>
 
-        <Button Grid.Row="7" Grid.Column="1" Width="90" Height="25" HorizontalAlignment="Right" Margin="0,0,10,0" Click="Button_Click">Сохранить</Button>
+        <Button Grid.Row="7" Grid.Column="1" Width="90" Height="25" HorizontalAlignment="Right" Margin="0,0,10,0" Click="Button_Click" Background="#FF02B9D0">
+            Сохранить
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
     </Grid>
 </Page>
