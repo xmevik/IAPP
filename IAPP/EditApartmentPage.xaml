@@ -1,0 +1,49 @@
+﻿<Page x:Class="IAPP.EditApartmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:IAPP"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditApartmentPage">
+    <Grid x:Name="editGrid" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition MaxWidth="400"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="Дом:  "  TextAlignment="Right"></TextBlock>
+        <ComboBox DisplayMemberPath="ID" x:Name="nameTextCombobox" MinWidth="300" Margin="8,0,10,0" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Name}"></ComboBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="адрес:  "  TextAlignment="Right"></TextBlock>
+        <TextBox  x:Name="streetTextBlock"  Margin="8,0,10,0" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Street}" TextAlignment="Left"></TextBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="площадь квартиры:  "  TextAlignment="Right"></TextBlock>
+        <TextBox  x:Name="areaTextBlock"  Margin="8,0,10,0" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Area}" TextAlignment="Left"></TextBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Text="количество комнат:  "  TextAlignment="Right"></TextBlock>
+        <TextBox  x:Name="countOfRoomsTextBlock"  Margin="8,0,10,0" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Text="{Binding CountOfRooms}" TextAlignment="Left"></TextBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Text="секция (подъезда):  "  TextAlignment="Right"></TextBlock>
+        <TextBox x:Name="sectionTextBlock" Margin="8,0,10,0" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Section}" TextAlignment="Left"></TextBox>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" Text="Этаж:  "  TextAlignment="Right"></TextBlock>
+        <TextBox x:Name="floorTextBlock" Margin="8,0,10,0" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Floor}" TextAlignment="Left"></TextBox>
+
+        <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" Text="Статус:  "  TextAlignment="Right"></TextBlock>
+        <CheckBox x:Name="statusTextBlock"  Margin="8,0,10,0" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding status}"></CheckBox>
+
+        <Button Grid.Row="7" Grid.Column="1" Width="90" Height="25" HorizontalAlignment="Right" Margin="0,0,10,0" Click="Button_Click">Сохранить</Button>
+    </Grid>
+</Page>

@@ -40,10 +40,10 @@
                             </Grid.ColumnDefinitions>
 
                             <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="названия ЖК:  "  TextAlignment="Right"></TextBlock>
-                            <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="asfdasdfsadfsadfsafasfasdfasfdasdfasdf" TextAlignment="Left"></TextBlock>
+                            <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding House.ResidentialComplex.Name}" TextAlignment="Left"></TextBlock>
 
                             <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="адрес:  "  TextAlignment="Right"></TextBlock>
-                            <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Name}" TextAlignment="Left"></TextBlock>
+                            <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding House.Street}" TextAlignment="Left"></TextBlock>
 
                             <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="площадь квартиры:  "  TextAlignment="Right"></TextBlock>
                             <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Area}" TextAlignment="Left"></TextBlock>
@@ -60,7 +60,7 @@
                             <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" Text="Статус:  "  TextAlignment="Right"></TextBlock>
                             <TextBlock Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Text="{Binding status}" TextAlignment="Left"></TextBlock>
 
-                            <Button Grid.Row="7" Grid.Column="1" Width="90" HorizontalAlignment="Right">Редактировать</Button>
+                            <Button Grid.Row="7" Grid.Column="1" Width="90" HorizontalAlignment="Right" Click="Button_Click" >Редактировать</Button>
                         </Grid>
                     </Border>
                 </DataTemplate>
@@ -75,7 +75,7 @@
         <StackPanel Margin="10,10,10,0" Grid.Column="2" ScrollViewer.VerticalScrollBarVisibility="Auto" >
             
             <Button x:Name="deleteBtn" Width="90"  FontSize="12" HorizontalAlignment="Left" Click="deleteBtn_Click">Удалить</Button>
-            <Button x:Name="addBtn" Width="90"  FontSize="12" Margin="0,10,0,0" HorizontalAlignment="Left">Добавить</Button>
+            <Button x:Name="addBtn" Width="90"  FontSize="12" Margin="0,10,0,0" HorizontalAlignment="Left" Click="addBtn_Click">Добавить</Button>
 
             <Button x:Name="filterBtn"  Width="90" FontSize="12" Margin="0,10,0,0" HorizontalAlignment="Left" Click="filterBtn_Click">Фильтры</Button>
 

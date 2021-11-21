@@ -136,5 +136,16 @@ namespace IAPP
                 }
             }
         }
+
+        private void addBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MEF.Navigate(Manager.editApartmentPage);
+            Manager.titel.Text = "Редактирование списка квартир";
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(e.OriginalSource.ToString());
+        }
     }
 }

@@ -88,6 +88,9 @@
     <Compile Include="Coefficients.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EditApartmentPage.xaml.cs">
+      <DependentUpon>EditApartmentPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="House.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
@@ -102,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ApartmentsListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditApartmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
