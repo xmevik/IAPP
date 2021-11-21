@@ -21,6 +21,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
+
                     <Border  Margin="8,8,8,8" BorderBrush="#FF329ED8" BorderThickness="5" Padding="15" CornerRadius="15">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -66,6 +67,8 @@
             </ListView.ItemTemplate>
         </ListView>
 
+        <TextBlock Grid.Column="0" x:Name="zeroDataAlert" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" Visibility="Collapsed">Нет квартир по выбранному фильтру</TextBlock>
+        
         <GridSplitter Grid.Column="1" ShowsPreview="False" Width="3"
         HorizontalAlignment="Center" VerticalAlignment="Stretch" />
 

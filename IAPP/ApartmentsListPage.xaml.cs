@@ -84,6 +84,7 @@ namespace IAPP
         }
         private void updateApartmentsList()
         {
+            zeroDataAlert.Visibility = Visibility.Collapsed;
             var apartments = BaseDomNSLEEntities.GetContext().Apartaments.ToList();
 
             if (houseComboBox.SelectedIndex > 0)
@@ -96,6 +97,11 @@ namespace IAPP
                 apartments = apartments.Where((item) => item.Section.ToString() == sectionTextBox.Text).ToList();
 
             LViewApartments.ItemsSource = apartments;
+            if (apartments.Count <= 0)
+            {
+                LViewApartments.Visibility = Visibility.Collapsed;
+                zeroDataAlert.Visibility = Visibility.Visible;
+            }
         }
 
         private void houseComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
