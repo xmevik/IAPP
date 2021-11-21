@@ -26,9 +26,7 @@
         <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="Дом:  "  TextAlignment="Right"></TextBlock>
         <ComboBox DisplayMemberPath="ID" x:Name="nameTextCombobox" MinWidth="300" Margin="8,0,10,0" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Name}"></ComboBox>
 
-        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="адрес:  "  TextAlignment="Right"></TextBlock>
-        <TextBox  x:Name="streetTextBlock"  Margin="8,0,10,0" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Street}" TextAlignment="Left"></TextBox>
-
+        
         <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="площадь квартиры:  "  TextAlignment="Right"></TextBlock>
         <TextBox  x:Name="areaTextBlock"  Margin="8,0,10,0" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Text="{Binding Area}" TextAlignment="Left"></TextBox>
 

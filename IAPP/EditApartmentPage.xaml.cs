@@ -30,6 +30,8 @@ namespace IAPP
 
             if (apartnentData != null)
             {
+                MessageBox.Show(apart.ToString());
+                nameTextCombobox.SelectedIndex = apart.House.ID;
                 areaTextBlock.Text = apartnentData.Area.ToString();
                 floorTextBlock.Text = apartnentData.Floor.ToString();
                 countOfRoomsTextBlock.Text = apartnentData.CountOfRooms.ToString();
@@ -48,24 +50,34 @@ namespace IAPP
                 flag = true;
             }
 
-            var houses = BaseDomNSLEEntities.GetContext().House.ToList();
+            try
+            {
+                var houses = BaseDomNSLEEntities.GetContext().House.ToList();
 
-            House selectHouse = houses[nameTextCombobox.SelectedIndex];
-            apartnentData.House = selectHouse;
+                House selectHouse = houses[nameTextCombobox.SelectedIndex];
+                apartnentData.House = selectHouse;
 
-            apartnentData.Area = Convert.ToDouble(areaTextBlock.Text);
-            apartnentData.Floor = Convert.ToInt32(floorTextBlock.Text);
-            apartnentData.CountOfRooms = Convert.ToInt32(countOfRoomsTextBlock.Text);
-            apartnentData.Section = Convert.ToInt32(sectionTextBlock.Text);
-            apartnentData.IsSold = Convert.ToBoolean(statusTextBlock.IsChecked);
+                apartnentData.Area = Convert.ToDouble(areaTextBlock.Text);
+                apartnentData.Floor = Convert.ToInt32(floorTextBlock.Text);
+                apartnentData.CountOfRooms = Convert.ToInt32(countOfRoomsTextBlock.Text);
+                apartnentData.Section = Convert.ToInt32(sectionTextBlock.Text);
+                apartnentData.IsSold = Convert.ToBoolean(statusTextBlock.IsChecked);
 
-            if (flag)
-                BaseDomNSLEEntities.GetContext().Apartaments.Add(apartnentData);
+                if (flag)
+                    BaseDomNSLEEntities.GetContext().Apartaments.Add(apartnentData);
 
-            BaseDomNSLEEntities.GetContext().SaveChanges();
+                BaseDomNSLEEntities.GetContext().SaveChanges();
 
-            Manager.MEF.Navigate(Manager.apartmentsListPage);
-            Manager.titel.Text = "Список квартир";
+                Manager.MEF.Navigate(Manager.apartmentsListPage);
+                Manager.titel.Text = "Список квартир";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("некорректные данные");
+            }
+            
+
+            
         }
     }
 }

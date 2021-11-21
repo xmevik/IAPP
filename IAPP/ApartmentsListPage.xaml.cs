@@ -48,7 +48,6 @@ namespace IAPP
             addBtn.Visibility = Visibility.Collapsed;
             deleteBtn.Visibility = Visibility.Collapsed;
             filterBtn.Visibility = Visibility.Collapsed;
-            pagginateButtonsWrapPanel.Visibility = Visibility.Collapsed;
             editBtn.Visibility = Visibility.Collapsed;
 
         }
@@ -60,7 +59,6 @@ namespace IAPP
             deleteBtn.Visibility = Visibility.Visible;
             filterBtn.Visibility = Visibility.Visible;
             editBtn.Visibility = Visibility.Visible;
-            pagginateButtonsWrapPanel.Visibility = Visibility.Visible;
 
         }
 
