@@ -16,15 +16,15 @@ namespace IAPP
     public partial class BaseDomNSLEEntities : DbContext
     {
         private static BaseDomNSLEEntities _context;
-        public BaseDomNSLEEntities()
-            : base("name=BaseDomNSLEEntities")
-        {
-        }
         public static BaseDomNSLEEntities GetContext()
         {
             if (_context == null)
                 _context = new BaseDomNSLEEntities();
             return _context;
+        }
+        public BaseDomNSLEEntities()
+            : base("name=BaseDomNSLEEntities")
+        {
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
