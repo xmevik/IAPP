@@ -14,7 +14,6 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <!--<Button Width="150" Grid.Row="1" Height="30"  Content="AddEditPage" Click="Button_Click_3"/>-->
             <Button Content="Страница коэффициентов" Click="Button_Click_2" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="150" Margin="10" Grid.Row="0" Background="#FF02B9D0">
                 <Button.Resources>
                     <Style TargetType="Border">

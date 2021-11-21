@@ -32,13 +32,6 @@ namespace IAPP
 
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            Manager.MEF.Navigate(Manager.addEditPage);
-            Manager.titel.Text = "addEditPage";
-
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Manager.MEF.Navigate(Manager.apartmentsListPage);
