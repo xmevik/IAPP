@@ -9,9 +9,9 @@
       Title="ApartmentsListPage">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"  MinWidth="300"></ColumnDefinition>
             <ColumnDefinition Width="auto"></ColumnDefinition>
-            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto" MinWidth="210"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <ListView Width="auto" Grid.Column="0" Name="LViewApartments" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center">
             <ListView.ItemsPanel>
@@ -71,7 +71,7 @@
 
         <StackPanel Margin="10,10,10,0" Grid.Column="2" ScrollViewer.VerticalScrollBarVisibility="Auto" >
             
-            <Button x:Name="deleteBtn" Width="90"  FontSize="12" HorizontalAlignment="Left">Удалить</Button>
+            <Button x:Name="deleteBtn" Width="90"  FontSize="12" HorizontalAlignment="Left" Click="deleteBtn_Click">Удалить</Button>
             <Button x:Name="addBtn" Width="90"  FontSize="12" Margin="0,10,0,0" HorizontalAlignment="Left">Добавить</Button>
 
             <Button x:Name="filterBtn"  Width="90" FontSize="12" Margin="0,10,0,0" HorizontalAlignment="Left" Click="filterBtn_Click">Фильтры</Button>
@@ -84,20 +84,20 @@
             <GroupBox x:Name="filretGroupBox" Margin="10,0,10,0"  Padding="8" Header="Фильтры" Visibility="Hidden">
                 <StackPanel>
                     <TextBlock  FontSize="13" Margin="0,10,0,0">Жилищный комплекс:</TextBlock>
-                    <ComboBox  Margin="0,5,0,0"></ComboBox>
+                    <ComboBox DisplayMemberPath="Name" x:Name="residentialComplexComboBox" SelectionChanged="residentialComplexComboBox_SelectionChanged" Margin="0,5,0,0"></ComboBox>
 
                     <TextBlock FontSize="13" Margin="0,10,0,0">Дом:</TextBlock>
-                    <ComboBox   Margin="0,5,0,0"></ComboBox>
+                    <ComboBox DisplayMemberPath="ID" SelectionChanged="houseComboBox_SelectionChanged" x:Name="houseComboBox" Margin="0,5,0,0"></ComboBox>
 
-                    <TextBlock FontSize="13" Margin="0,10,0,0">Этаж:</TextBlock>
-                    <TextBox  Margin="0,5,0,0"></TextBox>
+                    <TextBlock FontSize="13" Margin="0,10,0,0" >Этаж:</TextBlock>
+                    <TextBox x:Name="floorTextBox" TextChanged="floorTextBox_TextChanged" Margin="0,5,0,0" ></TextBox>
 
                     <TextBlock FontSize="13" Margin="0,10,0,0">Секция:</TextBlock>
-                    <TextBox  Margin="0,5,0,0"></TextBox>
+                    <TextBox x:Name="sectionTextBox" TextChanged="floorTextBox_TextChanged" Margin="0,5,0,0"></TextBox>
 
                     <WrapPanel>
                         <TextBlock FontSize="13" Margin="0,10,0,0">Тольео проданные:</TextBlock>
-                        <CheckBox VerticalAlignment="Center"  Margin="10,10,0,0"></CheckBox>
+                        <CheckBox x:Name="isSoldCheckBox" VerticalAlignment="Center"  Margin="10,10,0,0"></CheckBox>
                     </WrapPanel>
 
                     <Button x:Name="closeFilterBtn" Margin="0,10,0,0" Click="closeFilterBtn_Click">Закрыть</Button>
