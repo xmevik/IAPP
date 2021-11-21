@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище BaseDomNSLEModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище BaseDomNSLEModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Apartaments">
           <Key>
             <PropertyRef Name="ID" />
@@ -21,8 +21,6 @@
           <Property Name="ApartmentValueAdded" Type="int" Nullable="false" />
           <Property Name="IsDeleted" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "BaseDomNSLE.dbo.Coefficients" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="Coefficients">
           <Key>
             <PropertyRef Name="area" />
@@ -93,20 +91,9 @@
         </Association>
         <EntityContainer Name="Хранилище BaseDomNSLEModelContainer">
           <EntitySet Name="Apartaments" EntityType="Self.Apartaments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Coefficients" EntityType="Self.Coefficients" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="House" EntityType="Self.House" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ResidentialComplex" EntityType="Self.ResidentialComplex" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Coefficients" EntityType="Self.Coefficients" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Coefficients].[area] AS [area], 
-    [Coefficients].[areac] AS [areac], 
-    [Coefficients].[rooms] AS [rooms], 
-    [Coefficients].[roomsc] AS [roomsc], 
-    [Coefficients].[apartmentc] AS [apartmentc], 
-    [Coefficients].[housec] AS [housec], 
-    [Coefficients].[complexc] AS [complexc], 
-    [Coefficients].[basec] AS [basec]
-    FROM [dbo].[Coefficients] AS [Coefficients]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FK_Apartaments_House" Association="Self.FK_Apartaments_House">
             <End Role="House" EntitySet="House" />
             <End Role="Apartaments" EntitySet="Apartaments" />
@@ -116,8 +103,7 @@
             <End Role="House" EntitySet="House" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BaseDomNSLEModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
