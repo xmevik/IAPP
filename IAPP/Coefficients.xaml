@@ -39,10 +39,14 @@
             
             <TextBox HorizontalAlignment="Left" Margin="426,206,0,0" Text="" VerticalAlignment="Top" Width="120" Height="20" x:Name="basec"/>
             <TextBlock Text="Базовая стоимость на строительство" Height="20" Margin="217,206,379,139"/>
-            
-            <Button Content="Сохранить изменения" Canvas.Left="330" Canvas.Top="242" Height="25" Width="140" BorderBrush="#FF329ED8" Background="#FF329ED8" Click="BtnSave_Click"/>
+
+            <Button Content="Сохранить изменения" Canvas.Left="330" Canvas.Top="242" Height="25" Width="140" BorderBrush="#FF329ED8" Background="#FF02B9D0" Click="BtnSave_Click">
+                <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
         </Canvas>
-        
-        <TextBlock Text="Страница редактирования коэффициентов" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
     </Grid>
 </Page>

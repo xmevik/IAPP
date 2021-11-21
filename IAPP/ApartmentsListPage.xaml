@@ -114,14 +114,14 @@
                 <Button Width="25" Height="25" Content="←" Grid.Column="0" Background="#FF02B9D0">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="10"/>
+                            <Setter Property="CornerRadius" Value="5"/>
                         </Style>
                     </Button.Resources>
                 </Button>
                 <Button Width="25" Height="25" Content="→" Grid.Column="1" Background="#FF02B9D0">
                     <Button.Resources>
                         <Style TargetType="{x:Type Border}">
-                            <Setter Property="CornerRadius" Value="10"/>
+                            <Setter Property="CornerRadius" Value="5"/>
                         </Style>
                     </Button.Resources>
                 </Button>
