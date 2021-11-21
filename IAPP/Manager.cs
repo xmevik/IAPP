@@ -14,5 +14,6 @@ namespace IAPP
         public static Coefficients coefficientsPage { get; set; }
         public static NavigateButtonPage navigateButtonsPage { get; set; }
         public static ApartmentsListPage apartmentsListPage { get; set; }
+        public static TextBlock titel;
     }
 }

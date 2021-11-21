@@ -24,7 +24,7 @@ namespace IAPP
         {
             InitializeComponent();
             Manager.MEF = MEF;
-
+            Manager.titel = titelTextBlock;
             Manager.addEditPage = new AddEditPage();
             Manager.coefficientsPage = new Coefficients();
             Manager.navigateButtonsPage = new NavigateButtonPage();
@@ -36,6 +36,7 @@ namespace IAPP
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
             Manager.MEF.GoBack();
+            Manager.titel.Text = "Главная страница";
         }
 
         private void MEF_ContentRendered(object sender, EventArgs e)
