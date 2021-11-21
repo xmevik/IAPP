@@ -11,7 +11,7 @@ namespace IAPP
     {
         public static Frame MEF { get; set; }
         public static AddEditPage addEditPage { get; set; }
-        public static Coefficients coefficientsPage { get; set; }
+        public static Coef coefficientsPage { get; set; }
         public static NavigateButtonPage navigateButtonsPage { get; set; }
         public static ApartmentsListPage apartmentsListPage { get; set; }
         public static EditApartmentPage editApartmentPage { get; set; }
